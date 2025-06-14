@@ -41,6 +41,7 @@ export default function SearchBox({ getInfo }) {
       event.preventDefault();
       let weather = await getWeatherInfo();
       getInfo(weather);
+      setError(false);
       return setCity((prevCity) => (prevCity = ""));
     } catch (err) {
       setError (true);
